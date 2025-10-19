@@ -1,0 +1,176 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import mobile-specific styles */
+@import './mobile.css';
+
+/* Custom Font Definitions */
+@font-face {
+  font-family: 'Sohne';
+  src: url('/fonts/sohne-400-normal.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Sohne';
+  src: url('/fonts/sohne-500-normal.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Sohne';
+  src: url('/fonts/sohne-700-normal.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Source Serif Pro';
+  src: url('/fonts/source-serif-pro-400-normal.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Source Serif Pro';
+  src: url('/fonts/source-serif-pro-400-italic.woff') format('woff');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GT Super';
+  src: url('/fonts/gt-super-400-normal.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Font Utility Classes */
+.font-sohne {
+  font-family: 'Sohne', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.font-serif {
+  font-family: 'Source Serif Pro', Georgia, 'Times New Roman', serif;
+}
+
+.font-display {
+  font-family: 'GT Super', Georgia, 'Times New Roman', serif;
+}
+
+/* Typography System */
+.heading-display {
+  font-family: 'GT Super', Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+.heading-ui {
+  font-family: 'Sohne', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-weight: 500;
+}
+
+.body-text {
+  font-family: 'Source Serif Pro', Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.ui-text {
+  font-family: 'Sohne', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-weight: 400;
+}
+
+/* Position Control Variables - Edit these values to adjust layout */
+:root {
+  /* Header element positions */
+  --header-hamburger-left: -5rem;  /* How far from left edge the hamburger should be */
+  --header-left-gap: 0.5rem;        /* Gap between hamburger and Medium logo */
+  --header-search-gap: 1rem;      /* Gap between Medium logo and search bar */
+  --header-search-width: 24rem;   /* Search bar width */
+  
+  /* Header right side element gaps */
+  --header-write-gap: -5rem;     /* Gap between search bar and Write button */
+  --header-upload-gap: -1rem;    /* Gap between Write and Upload buttons */
+  --header-notifications-gap: 0.2rem; /* Gap between Upload and Notifications */
+  --header-pfp-gap: 1rem;       /* Gap between Notifications and PFP */
+  
+  /* PFP positioning */
+  --header-pfp-right: -4rem;        /* How far from right edge the PFP should be */
+  --header-pfp-top: 0rem;         /* Vertical offset for PFP */
+  --header-pfp-size: 2rem;        /* PFP size (width and height) */
+  
+  /* Post content positions */
+  --post-left-offset: 27rem;       /* How far left the post content should be */
+  --post-max-width: 42rem;        /* Maximum width of post content */
+}
+
+/* 
+HOW TO ADJUST POSITIONS:
+1. Edit the CSS variables above to change positions
+2. Header elements: Increase values to move hamburger, Medium logo, and search more to the right
+3. Post content: Increase --post-left-offset to move content more to the left
+4. Save the file and refresh the page to see changes
+
+HEADER LEFT SIDE:
+- To move hamburger more right: increase --header-hamburger-left
+- To adjust spacing between hamburger and logo: modify --header-left-gap
+- To adjust spacing between logo and search: modify --header-search-gap
+- To make search bar wider: increase --header-search-width
+
+HEADER RIGHT SIDE:
+- To adjust gap between search and Write: modify --header-write-gap
+- To adjust gap between Write and Upload: modify --header-upload-gap
+- To adjust gap between Upload and Notifications: modify --header-notifications-gap
+- To adjust gap between Notifications and PFP: modify --header-pfp-gap
+
+PFP POSITIONING:
+- To move PFP from right edge: increase --header-pfp-right
+- To move PFP up/down: modify --header-pfp-top
+- To change PFP size: modify --header-pfp-size
+
+POST CONTENT:
+- To move post content more left: increase --post-left-offset
+- To make post content wider: increase --post-max-width
+*/
+
+* {
+  @apply m-0 p-0 box-border;
+}
+
+body {
+  @apply font-texts relative;
+}
+
+.size {
+  @apply w-[95%] md:w-[90%] mx-auto;
+}
+
+.shadows {
+  box-shadow: 0px 0px 3px 0.3px rgb(182, 182, 182);
+}
+
+.btn {
+  @apply px-3 p-2 text-sm font-medium;
+}
+
+.center {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.write .ql-editor {
+  font-size: 1.2rem !important;
+  padding: 0 !important;
+}
